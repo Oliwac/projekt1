@@ -6,29 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head><script>  
-liczba1="3"
-liczba2=3
-liczba3=liczba1+liczba2
 
-console.log
 document.addEventListener("DOMContentLoaded", function() {
+//czekamy na wczytanie dokumentu 
+var input1 = document.getElementById('pole1');
+// przypisujemy input o id pole1 do zmiennej input1
+var input2 = document.getElementById('pole2');
+// przypisujemy input o id pole2 do zmiennej input2
+input1.addEventListener('change', updateValue);
+// uruchamiamy updatevalue , kiedy cos zmieni sie w polu1
+input2.addEventListener('change', updateValue);
+// uruchamiamy updatevalue , kiedy cos zmieni sie w polu2
+ 
+function dodawanie(liczba1,liczba2) {
 
 
-const input = document.getElementById('pole');
-const log = document.getElementById('box');
+  log = document.getElementById("box");
+  // Przypisujemy div o id box do zmiennej log 
+  console.log(liczba1);
+  console.log(liczba2);
 
-input.addEventListener('change', updateValue);
+  log.textContent = liczba1 + liczba2 ;
+  // do sroda diva o id box wyswietlamy sumę zmiennych  
+}; 
 
 function updateValue(e) {
-  log.textContent = e.target.value;
+    console.log(e.target.value);
+    // Wyswietlanie wartoci jaka trafi do funkcji z pól nadsłuchiwanych
+     pole1 = Number(document.getElementById('pole1').value);
+     // Popieranie wartości z html input o id pole1 z zamiana na wartosci licznową
+     pole2 = Number(document.getElementById('pole2').value);
+       // Popieranie wartości z  html input o id pole1 z zamiana na wartosci licznową
+     dodawanie(pole1,pole2);
+     // Wykonanie funkcji dodawanie 
+   
 }
 
 
 });
 
 </script>
-<body>
-    <div id="box"></div>
-    <input id="pole" type="text">
+<body>    
+
+    <input id="pole1" type="text" />+
+    <input id="pole2" type="text" /> 
+    =    <div id="box"></div>
 </body>
 </html> 

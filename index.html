@@ -59,8 +59,9 @@ function updateValue(e) {
 }
 tabelka.addEventListener("click",gra);
 firstMove = "x";
-
+numberMove=0
 function gra (e) 
+namberNove++;
 {
 console.log(e.target.id);
 targetId = document.getElementById(e.target.id);
@@ -75,11 +76,138 @@ if(firstMove == "x") {
   firstMove = "x";
 }
 }
+p1=document.getElementById("p1").innerHTML;"";
+p2=document.getElementById("p2").innerHTML;"";
+p3=document.getElementById("p3").innerHTML;"";
+p4=document.getElementById("p4").innerHTML;"";
+p5=document.getElementById("p5").innerHTML;"";
+p6=document.getElementById("p6").innerHTML;"";
+p7=document.getElementById("p7").innerHTML;"";
+p8=document.getElementById("p8").innerHTML;"";
+tabela.addEventListener("click");
+document.getElementById("reset").disabled=true;
+numberMove=0;
+
+
+wynik1 = p1+p2+p3 ;
+wynik2 = p4+p5+p6 ;
+wynik3=p6+p7+p8   ;
+wynik4=p1+p5+p9   ;
+wynik5=p7+p5+p3   ;
+wynik6=p3+p5+p7   ;
+wynik7=p9+p5+p1   ;
+wynik8=p2+p5+p8   ;
+reset = document.getElementById("reset");
+tabelka.removeaddEventListener("click",gra)
+reset.addEventListener("click") resetGame
+function resetGame(e);
+document.getElementById("p1");
+if(wynik1=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p1");
+}
+if(wynik2=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p2");
+}
+if(wynik3=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p3");
+}
+  if(wynik4=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p4");
+  }
+  if(wynik5=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p5");
+
+  }
+  if(wynik6=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p6");
+  }
+  if(wynik7=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p7");
+  }
+  if(wynik8=="xxx"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p8");
+  }
+  if(wynik1=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p1");
 
 }
+if(wynik2=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p2");
+}
+if(wynik3=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p3");
+}
+  if(wynik4=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p4");
+  }
+  if(wynik5t=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p5");
+  }
+  if(wynik6=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p6");
+  }
+  if(wynik7=="ooo"){
+  console.log("wygrałeś"); 
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p7");
+  }
+  if(wynik8=="ooo"){
+  console.log("wygrałeś");
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
+  document.getElementById("p8");
+  }
+if (resetNove == 9){
+  reset.disabled = false ;
+  tabelka.removeaddEventListener("click",gra)
 
+
+}
+  
+}
 });
-
 </script>
 <body>    
 
@@ -103,6 +231,6 @@ if(firstMove == "x") {
     <td id="p9"></td>
   </tr>
 </table>
-
+<button disabled="disabled" id="reset">reset</button>
   </body>
 </html> 

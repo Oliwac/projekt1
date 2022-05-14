@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head>
+<body>    
+
+    <input id="pole1" type="text" />+
+
+    
+    <input id="pole2" type="text" /> 
+    =    <div id="box"></div>
     <style>
+      body {
+    background-image: url('https://fotoomnia.pl/zdjecia/thu/99d6a39f0658d101433a00a2c03bc6b3.JPG');
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+      }
       table, th, td {
       border: 1px solid black;
       width: 800px;
@@ -16,221 +29,57 @@
       width:10px solid black ;
       height: 10px solid black;
       font-size: 24px;
+      background-color: aliceblue;
+      /* opacity: 0.6; */
     }
+    .image {
+      width: 20px;
+    }
+    .black {
+    color: rgb(8, 0, 153);
+      font-size: 65px;
+      text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1); }
+
+             .green {
+    color: rgb(27, 208, 90);
+      font-size: 65px;
+      text-shadow: 0px 4px 3px rgba(13, 208, 49, 0.773),
+             0px 8px 13px rgba(47, 214, 18, 0.875),
+             0px 18px 23px rgba(17, 217, 50, 0.803); }
     </style>
-    
-    
-    
-</head><script>  
-
-document.addEventListener("DOMContentLoaded", function() {
-//czekamy na wczytanie dokumentu 
-var input1 = document.getElementById('pole1');
-// przypisujemy input o id pole1 do zmiennej input1
-var input2 = document.getElementById('pole2');
-// przypisujemy input o id pole2 do zmiennej input2
-input1.addEventListener('change', updateValue);
-// uruchamiamy updatevalue , kiedy cos zmieni sie w polu1
-input2.addEventListener('change', updateValue);
-// uruchamiamy updatevalue , kiedy cos zmieni sie w polu2
- 
-function dodawanie(liczba1,liczba2) {
-
-
-  log = document.getElementById("box");
-  // Przypisujemy div o id box do zmiennej log 
-  console.log(liczba1);
-  console.log(liczba2);
-
-  log.textContent = liczba1 + liczba2 ;
-  // do sroda diva o id box wyswietlamy sumę zmiennych  
-}; 
-
-function updateValue(e) {
-    console.log(e.target.value);
-    // Wyswietlanie wartoci jaka trafi do funkcji z pól nadsłuchiwanych
-     pole1 = Number(document.getElementById('pole1').value);
-     // Popieranie wartości z html input o id pole1 z zamiana na wartosci licznową
-     pole2 = Number(document.getElementById('pole2').value);
-       // Popieranie wartości z  html input o id pole1 z zamiana na wartosci licznową
-     dodawanie(pole1,pole2);
-     // Wykonanie funkcji dodawanie 
-   
-}
-tabelka.addEventListener("click",gra);
-firstMove = "x";
-numberMove=0
-function gra (e) 
-namberNove++;
-{
-console.log(e.target.id);
-targetId = document.getElementById(e.target.id);
-if (targetId.innerHTML == ""){
-  targetId.innerHTML = firstMove ;
-
-
-if(firstMove == "x") {
-  firstMove = "o" ;
-  
-} else {
-  firstMove = "x";
-}
-}
-p1=document.getElementById("p1").innerHTML;"";
-p2=document.getElementById("p2").innerHTML;"";
-p3=document.getElementById("p3").innerHTML;"";
-p4=document.getElementById("p4").innerHTML;"";
-p5=document.getElementById("p5").innerHTML;"";
-p6=document.getElementById("p6").innerHTML;"";
-p7=document.getElementById("p7").innerHTML;"";
-p8=document.getElementById("p8").innerHTML;"";
-tabela.addEventListener("click");
-document.getElementById("reset").disabled=true;
-numberMove=0;
-
-
-wynik1 = p1+p2+p3 ;
-wynik2 = p4+p5+p6 ;
-wynik3=p6+p7+p8   ;
-wynik4=p1+p5+p9   ;
-wynik5=p7+p5+p3   ;
-wynik6=p3+p5+p7   ;
-wynik7=p9+p5+p1   ;
-wynik8=p2+p5+p8   ;
-reset = document.getElementById("reset");
-tabelka.removeaddEventListener("click",gra)
-reset.addEventListener("click") resetGame
-function resetGame(e);
-document.getElementById("p1");
-if(wynik1=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p1");
-}
-if(wynik2=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p2");
-}
-if(wynik3=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p3");
-}
-  if(wynik4=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p4");
-  }
-  if(wynik5=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p5");
-
-  }
-  if(wynik6=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p6");
-  }
-  if(wynik7=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p7");
-  }
-  if(wynik8=="xxx"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p8");
-  }
-  if(wynik1=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p1");
-
-}
-if(wynik2=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p2");
-}
-if(wynik3=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p3");
-}
-  if(wynik4=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p4");
-  }
-  if(wynik5t=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p5");
-  }
-  if(wynik6=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p6");
-  }
-  if(wynik7=="ooo"){
-  console.log("wygrałeś"); 
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p7");
-  }
-  if(wynik8=="ooo"){
-  console.log("wygrałeś");
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-  document.getElementById("p8");
-  }
-if (resetNove == 9){
-  reset.disabled = false ;
-  tabelka.removeaddEventListener("click",gra)
-
-
-}
-  
-}
-});
-</script>
-<body>    
-
-    <input id="pole1" type="text" />+
-    <input id="pole2" type="text" /> 
-    =    <div id="box"></div>
 <table id="tabelka">
+  
+
   <tr>
     <td id="p1"></td>
     <td id="p2"></td>
-    <td id="p3"></td>
+      <td id="p3"></td>
+  
   </tr>
+
   <tr>
     <td id="p4"></td>
     <td id="p5"></td>
-    <td id="p6"></td>
+      <td id="p6"></td>
+  
   </tr>
+
   <tr>
     <td id="p7"></td>
     <td id="p8"></td>
-    <td id="p9"></td>
+      <td id="p9"></td>
+  
   </tr>
-</table>
-<button disabled="disabled" id="reset">reset</button>
-  </body>
+<button disabled="disabled" id="reset">reset</button>  
+</table>    
+<div id="result"></div>
+<script src="/js/app.js"></script>
+
+</body>
 </html> 
+
+
+
+  

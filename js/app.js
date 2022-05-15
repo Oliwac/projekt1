@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     firstMove = '<div class="black">x</div>';
     nameField="x"
     numberMove = "0" ;
+    
     var p = [] ;
     wygrana=[];
     function gra(e){
@@ -136,6 +137,10 @@ document.addEventListener("DOMContentLoaded", function() {
               tabelka.removeEventListener("click",gra);
 
           }
+          for(x=1;x<10 ; x++){
+            document.getElementById("p+x").removeAttribute("name");
+          }
+          
           }
         
       }

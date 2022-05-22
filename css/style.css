@@ -1,0 +1,185 @@
+body {
+    background-image: url('https://i.lensdump.com/i/8GUtVK.jpg');
+    background-color: black;
+}
+
+.center {
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    display: flex;
+}
+
+.checked {
+    position: relative;
+    background-color: rgba(22, 10, 243, 0.897) !important;
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.goodAnswer {
+    position: relative;
+    background-color: rgba(5, 249, 95, 0.897) !important;
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.badAnswer {
+    position: relative;
+    background-color: rgba(249, 5, 5, 0.897) !important;
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+
+/*weight of element*/
+
+.dr {
+    text-align: right;
+    font-size: 1vmin;
+}
+
+
+/*symbol name*/
+
+.symbol {
+    font-size: 2vmin;
+    text-align: center
+}
+
+
+/*num of element*/
+
+.num_of_ele {
+    position: absolute;
+    left: 0.1vmin;
+    bottom: 0.1vmin;
+    font-size: 1vmin;
+    text-align: left;
+}
+
+.green {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.dark_green {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.lime_green {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.pink {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.blue {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.orange {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.dark_orange {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.red {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.dark_red {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.yellow {
+    position: relative;
+    background-color: rgba(86, 87, 86, 0.897);
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+.invis {
+    position: relative;
+    background-color: lightgreen;
+    opacity: 0;
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
+p.gone {
+    visibility: hidden;
+}

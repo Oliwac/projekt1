@@ -1,51 +1,91 @@
 var repeatElements = [];
+//definciuje tablicę powtórzonych elementów
 container = document.getElementsByClassName("symbol");
-// wszystkie element na scenie zawierjące klase symbol
-elementsSymbols = [];
+//container przyjmuje klasę "symbol"
+elementsSymbol = [];
+//definiuje tablicę symboli elementów
 y = 0;
 for (x = 0; x < container.length; x++) {
     if (container[x].textContent != 'DE' && container[x].textContent != 'DEL' && container[x].textContent != '57-71' && container[x].textContent != '89-103') {
-        elementsSymbols[y] = container[x];
-        // przyporządkowujemy sybole pierwiastków do zmiennej 
-
-        console.log(y + "-" + elementsSymbols[y].textContent);
+        //wyklucza z symboli pola puste i z liczbami
+        elementsSymbol[y] = container[x];
+        // przypisuje właściwe liczb z pierwiastków do containerów
+        console.log(y + "-" + elementsSymbol[y].textContent);
         y++;
+        //co każdą pętlę dodaje do containera 1 aż osiągnie liczbę z y
     }
 }
 game();
-//wywlasnie losowania gry
+
 function game() {
     console.log(repeatElements);
     if (repeatElements.length >= elements.length) {
+        /*gdy liczba elementów tablicy z powtórzonymi pierwiastkami jest równa 0 lub większa
+         od ilości pierwiastków następuje koniec gry*/
+        clearInterval(x);
+        timer.innerHTML = "Koniec gry!!!";
         console.log("koniec gry");
-        // linijki odpowiada za koniec gry
     } else {
-        RandomElement = Math.floor(Math.random() * elements.length);
-        // losowanie liczby ze wszytkich elementów tablicy pierwiastków
-        if (repeatElements.includes(RandomElement)) {
-            //sprawdzanie czy wylsowana liczba zawiera sie w tablicy powtorzonych pierwiastków
+        randomElement = Math.floor(Math.random() * elements.length);
+        //generuje losową liczbę (generowanie odbywa się od 0 do 117, numery pierwiastków)
+        if (repeatElements.includes(randomElement)) {
+            // jeśli wylosowana liczba jest w tablicy powtórzonych, wykonaj funkcję game jeszcze raz  
             game();
-            //
         } else {
-            elementsSymbols[RandomElement].parentElement.classList.add("checked");
-            //zaznaczenoe wyloswanego pierwiastka na tablicy pierwiastków
-            repeatElements.push(RandomElement)
-                //dodanie wylosowanej liczby do tablicy powtórznych pierwiastków
+            elementsSymbol[randomElement].parentElement.classList.add("checker");
+            // kolor wylosowanegoo pierwiatska zostaje zmieniony z szarego na różowy
+            repeatElements.push(randomElement)
+                // powtórzone pierwiastki dodaje do tablicy z powtórzonymi pierwiastkami
         }
     }
 }
 
 function checkElement(event) {
     if (event.keyCode == 13) {
-        if (event.target.value == elements[RandomElement][1]) {
-            elementsSymbols[RandomElement].parentElement.classList.remove("checked");
-            elementsSymbols[RandomElement].parentElement.classList.add("goodAnswer");
-            //zaznaczenie danego pierwiastka i zaznaczenie dobrej odpowiedzi 
+        //wciśnięcie "enter" (eneter ma keyCode 13)
+        if (event.target.value == elements[randomElement][1]) {
+            elementsSymbol[randomElement].parentElement.classList.remove("checker");
+            elementsSymbol[randomElement].parentElement.classList.add("goodAnswer");
+            countDownDate = new Date().getTime() + (10 * 1000);
+            // usuwa kolor z "checked"(szary), a zamiast tego dodaje z "goodAnswer"(zielony)
         } else {
-            elementsSymbols[RandomElement].parentElement.classList.remove("checked");
-            elementsSymbols[RandomElement].parentElement.classList.add("badAnswer");
-            //przypisanie dobrej odpowiedzi danym kolorem z tablicy pierwiastków 
+            elementsSymbol[randomElement].parentElement.classList.remove("checker");
+            elementsSymbol[randomElement].parentElement.classList.add("badAnswer");
+            countDownDate = new Date().getTime() + (10 * 1000);
+            // usuwa kolor z "checked" (szary), a zamiast tego dodaje z "badAnswer"(czerwony)
         }
+        event.target.value = "";
+        game();
+    }
+}
+
+// Set the date we're counting down to
+var countDownDate = new Date().getTime() + (10 * 1000);
+
+// Update the count down every 1 second
+var x = setInterval(time, 1000);
+
+function time() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("timer").innerHTML = minutes + " min. " + seconds + " sek. ";
+
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        //  clearInterval(x);
+        document.getElementById("timer").innerHTML = "Czas minął";
+        countDownDate = new Date().getTime() + (10 * 1000);
+        elementsSymbol[randomElement].parentElement.classList.add("badAnswer");
         game();
     }
 }

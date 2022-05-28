@@ -1,6 +1,24 @@
 body {
-    background-image: url('https://i.lensdump.com/i/8GUtVK.jpg');
-    background-color: black;
+    font: 16px Arial;
+    background-color: #2d3e43;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+#timer {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    position: relative;
+    left: 0;
+    text-shadow: 1px 1px 0px #c4dbe2, 2px 2px 0px #b4d1d9, 3px 3px 0px #a6c6cf, 4px 4px 0px #94b8c3, 5px 5px 0px #87aeb9, 6px 6px 0px #7aa3af, 7px 7px 0px #6d97a3, 8px 8px 0px #618b98, 9px 9px 0px #56818e, 10px 10px 0px #4c7683, 15px 15px 25px rgba(0, 0, 0, .9);
+    transition: .5s ease-in-out;
+}
+
+#timer:hover {
+    left: 20px;
+    text-shadow: -1px 1px 0px #c4dbe2, -2px 2px 0px #b4d1d9, -3px 3px 0px #a6c6cf, -4px 4px 0px #94b8c3, -5px 5px 0px #87aeb9, -6px 6px 0px #7aa3af, -7px 7px 0px #6d97a3, -8px 8px 0px #618b98, -9px 9px 0px #56818e, -10px 10px 0px #4c7683, -15px 15px 25px rgba(0, 0, 0, .9);
 }
 
 .center {
@@ -8,38 +26,18 @@ body {
     padding: 15px;
 }
 
+.checker {
+    position: relative;
+    background-color: #9999FF !important;
+    width: 5vw;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+}
+
 .container {
     display: flex;
-}
-
-.checked {
-    position: relative;
-    background-color: rgba(22, 10, 243, 0.897) !important;
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.goodAnswer {
-    position: relative;
-    background-color: rgba(5, 249, 95, 0.897) !important;
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.badAnswer {
-    position: relative;
-    background-color: rgba(249, 5, 5, 0.897) !important;
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
 }
 
 
@@ -69,9 +67,9 @@ body {
     text-align: left;
 }
 
-.green {
+.goodAnswer {
     position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
+    background-color: #99FF99 !important;
     width: 5vw;
     height: 5vh;
     padding: 2px;
@@ -79,9 +77,9 @@ body {
     float: left;
 }
 
-.dark_green {
+.badAnswer {
     position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
+    background-color: #FF9999 !important;
     width: 5vw;
     height: 5vh;
     padding: 2px;
@@ -89,79 +87,9 @@ body {
     float: left;
 }
 
-.lime_green {
+.lightgrey {
     position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.pink {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.blue {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.orange {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.dark_orange {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.red {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.dark_red {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
-    width: 5vw;
-    height: 5vh;
-    padding: 2px;
-    margin: 2px;
-    float: left;
-}
-
-.yellow {
-    position: relative;
-    background-color: rgba(86, 87, 86, 0.897);
+    background-color: lightgrey;
     width: 5vw;
     height: 5vh;
     padding: 2px;
@@ -182,4 +110,39 @@ body {
 
 p.gone {
     visibility: hidden;
+}
+
+#statistics {
+    color: #474747;
+}
+
+#game {
+    background-color: #E0E0E0;
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#insertElement {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+#reset {
+    background: #474747;
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    color: silver;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+#reset:hover {
+    opacity: 0.7;
 }
